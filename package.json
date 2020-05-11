@@ -1,0 +1,43 @@
+{
+  "name": "eth-marketplace",
+  "version": "0.1.0",
+  "description": "An Ethereum Marketplace",
+  "author": "gregory@dappuniversity.com",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.9.1",
+    "babel-polyfill": "latest",
+    "babel-preset-env": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-stage-2": "latest",
+    "babel-preset-stage-3": "latest",
+    "babel-register": "latest",
+    "bootstrap": "latest",
+    "bulma": "^0.8.2",
+    "chai": "latest",
+    "chai-as-promised": "latest",
+    "chai-bignumber": "latest",
+    "node-sass": "^4.14.1",
+    "react": "latest",
+    "react-bootstrap": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest",
+    "truffle": "latest",
+    "web3": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

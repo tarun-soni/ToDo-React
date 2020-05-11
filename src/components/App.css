@@ -1,0 +1,47 @@
+/* Styles go here */
+.title{
+    color: aqua;
+    font-size: 30px;
+   
+}
+.form-div{
+
+position: relative;
+top: 10px;
+}
+.top-container{
+    margin-left: 10em;
+    position : relative;
+    top:10px;
+    color: red;
+    display: block;
+    padding: 3em 3em 3em 3em;
+    white-space: pre-wrap;
+    text-decoration: none;
+}
+.container{position : relative;
+
+    display: block;
+    padding: 3em;
+    shape-outside: 10px;
+    white-space: pre-wrap;
+    text-decoration: none;
+}
+
+.element{
+
+    position: relative;top: 10px;
+   font-size: 2em;
+    
+    text-decoration: none;
+    white-space: pre-wrap;
+}
+
+.btn{
+
+    border-spacing: 10px;
+    position: relative;
+    top: 10px;
+    margin-left: 5px;
+     margin-right:5px;
+}
