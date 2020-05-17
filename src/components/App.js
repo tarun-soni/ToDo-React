@@ -60,8 +60,6 @@ class App extends Component {
     }
   }
 
-
-
   addItem(todoValue) {
     if (todoValue != "") {
       const newItem = {
@@ -80,14 +78,11 @@ class App extends Component {
     }
   }
 
-
-
   deleteItem(id) {
     const list = [...this.state.list]
     const updatedlist = list.filter(item => item.id !== id);
     this.setState({ list: updatedlist })
   }
-
 
   updateInput(input) {
     this.setState({ newItem: input })
@@ -96,77 +91,57 @@ class App extends Component {
     return (
 
       <div>
-        <div className="hero is-info">
+          <div className="hero is-info">
           <div className="hero-body has-text-centered">
             <p className="title is-1">Todos</p>
           </div>
-        </div>
+           </div>
 
+          .
+        <div className="has-text-centered">
 
-        <div div className="top-container">
-          <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-            <h1 className="title">Demo</h1>
-          </nav>
-          <div className=" has-text-centered">
-            <div className="form-div">
-              <form onSubmit={() => { console.log('form submtt') }}>
-                <TextField
-                  id="outlined-basic" label="Insert Task" variant="outlined"
-                  onChange={e => this.updateInput(e.target.value)}
-                  value={this.state.newItem} />
-              </form>
-              <button className="button is-black"
-                disabled={!this.state.newItem.length}
-                onClick={() => {
-                  console.log("Submit button pressed")
-                  this.addItem(this.state.newItem)
+          <form >
+            <TextField
+              id="outlined-basic" label="Insert Task" variant="outlined"
+              onChange={e => this.updateInput(e.target.value)}
+              value={this.state.newItem} />
+        
+          <button className="button is-black add-button"
+            disabled={!this.state.newItem.length}
+            onClick={() => {
+              console.log("Submit button pressed")
+              this.addItem(this.state.newItem)
 
-                  console.log('new Item', this.state.newItem)
+              console.log('new Item', this.state.newItem)
 
-                  // this.state.contract.methods.updateArray().send({ from: this.state.account }).then((r) => {
-
-                  //   return this.setState({
-                  //     inputTask: ''
-                  //   })
-                  // })
-                }
-                }> ADD  </button>
-            </div>
-          </div>
-          //
-          <div className="container">
+              // this.state.contract.methods.updateArray().send({ from: this.state.account }).then((r) => {
+              //   return this.setState({
+              //     inputTask: ''
+              //   })
+              // })
+            }
+            }> ADD  </button>
+  </form>
+          <div className="todo-container">
             <ul>
-              {this.state.list.map(item => {
-                return (
-                  <div className="container">
-                    <section key={item.id} className="section">
-                      <div className="container">
+              <li>
+                {this.state.list.map(item => {
+                  return (
+                    <div key={item.id} className="section">
 
-                        <input type="checkbox" name="idDone" id=""
-                          checked={item.isDone}
-                          onChange={() => { }}
-                        />
-                        {item.value}
-
-                        <div className="container">
-<button className="button is-danger has-text-weight-bold"
-                          onClick={() => this.deleteItem(item.id)}                                                                            
-                          >Delete</button>
-
-                        </div>
-                        
-                        {/* <Todo /> */}
-
-
-                      </div></section>
-                  </div>
-                )
-              })}
-
+                      <input type="checkbox" name="idDone" id=""
+                        // checked={item.isDone}
+                        onChange={() => { }}
+                      /> <p>{item.value}</p>
+                      <button className="button is-danger has-text-weight-bold delete-button" onClick={() => this.deleteItem(item.id)}>Delete</button>
+                    </div>
+                  )
+                })}
+              </li>
             </ul>
-          </div>
+          </div>  {/* top conatiner */}
 
-        </div>
+        </div> {/*center text*/}
       </div>
 
     );
