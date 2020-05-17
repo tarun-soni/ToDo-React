@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 import { IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Todo from './todo';
-
+import Checkbox from '@material-ui/core/Checkbox';
 class App extends Component {
   async componentWillMount() {
     //await this.loadWeb3()
@@ -87,15 +87,20 @@ class App extends Component {
   updateInput(input) {
     this.setState({ newItem: input })
   }
+
+  handleChange(inputID) {
+    const list = [...this.state.list]
+   
+  }
   render() {
     return (
 
       <div>
-          <div className="hero is-info">
+        <div className="hero is-info">
           <div className="hero-body has-text-centered">
             <p className="title is-1">Todos</p>
           </div>
-           </div>
+        </div>
 
           .
         <div className="has-text-centered">
@@ -105,23 +110,25 @@ class App extends Component {
               id="outlined-basic" label="Insert Task" variant="outlined"
               onChange={e => this.updateInput(e.target.value)}
               value={this.state.newItem} />
-        
-          <button className="button is-black add-button"
-            disabled={!this.state.newItem.length}
-            onClick={() => {
-              console.log("Submit button pressed")
-              this.addItem(this.state.newItem)
 
-              console.log('new Item', this.state.newItem)
+            <button className="button is-black add-button"
+              disabled={!this.state.newItem.length}
 
-              // this.state.contract.methods.updateArray().send({ from: this.state.account }).then((r) => {
-              //   return this.setState({
-              //     inputTask: ''
-              //   })
-              // })
-            }
-            }> ADD  </button>
-  </form>
+              onClick={() => {
+                console.log("Submit button pressed")
+                this.addItem(this.state.newItem)
+
+                console.log('new Item', this.state.newItem)
+
+                // this.state.contract.methods.updateArray().send({ from: this.state.account }).then((r) => {
+                //   return this.setState({
+                //     inputTask: ''
+                //   })
+                // })
+              }
+              }
+            > ADD  </button>
+          </form>
           <div className="todo-container">
             <ul>
               <li>
@@ -129,11 +136,23 @@ class App extends Component {
                   return (
                     <div key={item.id} className="section">
 
-                      <input type="checkbox" name="idDone" id=""
-                        // checked={item.isDone}
-                        onChange={() => { }}
-                      /> <p>{item.value}</p>
-                      <button className="button is-danger has-text-weight-bold delete-button" onClick={() => this.deleteItem(item.id)}>Delete</button>
+                      <Checkbox
+                        onChange={this.handleChange(item.id)}
+                       
+                        checked={item.id.isDone}
+                        type="checkbox" name="isDone"
+                        
+                      />
+
+                      
+<p>{item.value}</p>
+                      {/* <button className="button is-danger has-text-weight-bold delete-button" onClick={() => this.deleteItem(item.id)}>Delete</button> */}
+                      <div className="delButton">
+                      <IconButton aria-label="delete" className="" onClick={() => { this.deleteItem(item.id) }}>
+                        <DeleteIcon fontSize="large"  />
+                      </IconButton>
+
+                      </div>
                     </div>
                   )
                 })}
@@ -145,10 +164,7 @@ class App extends Component {
       </div>
 
     );
-
   }
 }
-
-
 
 export default App;
