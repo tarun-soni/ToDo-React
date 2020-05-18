@@ -102,12 +102,12 @@ class App extends Component {
           </div>
         </div>
 
-          
+
         <div className="has-text-centered">
 
           <form className="form">
             <TextField
-            className="textField"
+              className="textField"
               id="outlined-basic" label="Insert Task" variant="outlined"
               onChange={e => this.updateInput(e.target.value)}
               value={this.state.newItem} />
@@ -137,13 +137,10 @@ class App extends Component {
                 {this.state.list.map(item => {
                   return (
                     <div key={item.id} className="section">
-
                       <Checkbox
                         onChange={this.handleChange(item.id)}
-
                         checked={item.id.isDone}
                         type="checkbox" name="isDone"
-
                       />
                       <p>{item.value}</p>
                       {/* <button className="button is-danger has-text-weight-bold delete-button" onClick={() => this.deleteItem(item.id)}>Delete</button> */}
@@ -151,7 +148,6 @@ class App extends Component {
                         <IconButton aria-label="delete" className="" onClick={() => { this.deleteItem(item.id) }}>
                           <DeleteIcon fontSize="large" />
                         </IconButton>
-
                       </div>
                     </div>
                   )
@@ -159,7 +155,6 @@ class App extends Component {
               </li>
             </ul>
           </div>  {/* top conatiner */}
-
         </div> {/*center text*/}
       </div>
 
