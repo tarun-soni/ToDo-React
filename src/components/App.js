@@ -90,7 +90,7 @@ class App extends Component {
 
   handleChange(inputID) {
     const list = [...this.state.list]
-   
+
   }
   render() {
     return (
@@ -102,11 +102,12 @@ class App extends Component {
           </div>
         </div>
 
-          .
+          
         <div className="has-text-centered">
 
-          <form >
+          <form className="form">
             <TextField
+            className="textField"
               id="outlined-basic" label="Insert Task" variant="outlined"
               onChange={e => this.updateInput(e.target.value)}
               value={this.state.newItem} />
@@ -129,6 +130,7 @@ class App extends Component {
               }
             > ADD  </button>
           </form>
+
           <div className="todo-container">
             <ul>
               <li>
@@ -138,19 +140,17 @@ class App extends Component {
 
                       <Checkbox
                         onChange={this.handleChange(item.id)}
-                       
+
                         checked={item.id.isDone}
                         type="checkbox" name="isDone"
-                        
-                      />
 
-                      
-<p>{item.value}</p>
+                      />
+                      <p>{item.value}</p>
                       {/* <button className="button is-danger has-text-weight-bold delete-button" onClick={() => this.deleteItem(item.id)}>Delete</button> */}
                       <div className="delButton">
-                      <IconButton aria-label="delete" className="" onClick={() => { this.deleteItem(item.id) }}>
-                        <DeleteIcon fontSize="large"  />
-                      </IconButton>
+                        <IconButton aria-label="delete" className="" onClick={() => { this.deleteItem(item.id) }}>
+                          <DeleteIcon fontSize="large" />
+                        </IconButton>
 
                       </div>
                     </div>

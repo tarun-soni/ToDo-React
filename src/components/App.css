@@ -4,11 +4,24 @@
     font-size: 30px;
 }
 
+.form{
+    margin-top: 30px;
+    margin-left:30%;
+    margin-right:30%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.textField{
+    width: 65%;
+}
 form button{
-    background: #333;
+    background-color: #000;
     justify-content: center;
-    width: 5%;
-    height:100%;
+    width: 90px;
+    font-size: 90px;
+   
 }
 
 .todo-container{
@@ -25,33 +38,40 @@ form button{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .todo-container ul li {
     list-style-type: none;
 }
-.section p{ 
-    margin: 0;
-    width:  10%; 
-    height: auto ;
-    
-    justify-content: center;
-    padding: 20px;
-    font-variant-caps: all-petite-caps;
-    font-size: 40px;
-}
-
 .add-button{
     border-radius: 10px;
     position: relative;
     top: 10px;
     margin-left: 5px;
 }
+.section{
+  
+     margin-left:30%;
+     margin-right:30%;
+     justify-content: center;
+     align-items: center;
+    display: flex;
+}
+.section p{ 
+   
+    width:  100%; 
+    height: auto ;
+    justify-content: center;
+    padding-left: 20px;
+    font-variant-caps: all-petite-caps;
+    font-size: 40px;
+
+}
 
 .delButton{  
-    display: flex;
-    position: relative;
-    padding:1.2em;
-    margin-left: 20.2em;
-  
+
+    width:20%;
+   
+   
 }
