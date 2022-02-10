@@ -17,7 +17,7 @@
     "chai": "latest",
     "chai-as-promised": "latest",
     "chai-bignumber": "latest",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "latest",
     "react-bootstrap": "latest",
     "react-dom": "latest",
